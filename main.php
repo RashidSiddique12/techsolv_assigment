@@ -9,22 +9,36 @@
 
 <body>
     <form action="./main.php" method="POST">
-        <label for="name">Full Name : </label>
-        <input type="text" name="name" required id=""><br>
+        <table>
+            <tr>
+                <td> <label for="name">Full Name : </label></td>
+                <td><input type="text" name="name" required id=""><br></td>
+            </tr>
 
-        <label for="phnno">Phone Number : </label>
-        <input type="phone" name="phnno" required id=""><br>
+            <tr>
+                <td><label for="phnno">Phone Number : </label></td>
+                <td><input type="phone" name="phnno" required id=""><br></td>
+            </tr>
 
-        <label for="email">Email : </label>
-        <input type="email" name="email" required id=""><br>
+            <tr>
+                <td> <label for="email">Email : </label></td>
+                <td><input type="email" name="email" required id=""><br></td>
+            </tr>
 
-        <label for="subject">Subject : </label>
-        <input type="text" name="subject" required id=""><br>
+            <tr>
+                <td><label for="subject">Subject : </label></td>
+                <td><input type="text" name="subject" required id=""><br></td>
+            </tr>
 
-        <label for="message">Message : </label>
-        <input type="text" name="message" required id=""><br>
+            <tr>
+                <td><label for="message">Message : </label></td>
+                <td><input type="text" name="message" required id=""><br></td>
+            </tr>
 
-        <input type="submit" name="login" value="Submit" id="">
+            <tr>
+                <td><input type="submit" name="login" value="Submit" id=""></td>
+            </tr>
+        </table>
     </form>
 </body>
 
@@ -36,6 +50,7 @@ if (isset($_POST["login"])) {
 
     //name
     $name = $_POST["name"];
+    echo $name;
     // echo $name;
     if (!empty($_POST["name"])) {
         echo "Name : " . $_POST["name"] . "<br/>";
