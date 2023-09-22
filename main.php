@@ -17,7 +17,7 @@
 
             <tr>
                 <td><label for="phnno">Phone Number : </label></td>
-                <td><input type="phone" name="phnno" required id=""><br></td>
+                <td><input type="tel" name="phnno" required id=""><br></td>
             </tr>
 
             <tr>
@@ -50,42 +50,46 @@ if (isset($_POST["login"])) {
 
     //name
     $name = $_POST["name"];
-    echo $name;
+    $phnNo = $_POST["phnno"];
+    $email = $_POST["email"];
+    $subject = $_POST["subject"];
+    $message = $_POST["message"];
+
     // echo $name;
-    if (!empty($_POST["name"])) {
+    if (!empty($name) && strlen($name) > 5 && strlen($name) < 15) {
         echo "Name : " . $_POST["name"] . "<br/>";
     } else {
-        echo "Please entre Full name <br/>";
+        echo "Please Entre Vaild Full name <br/>";
     }
 
     //phn no.
-    if (!empty($_POST["phnno"])) {
+    if (!empty($phnNo) && strlen($phnNo) == 10) {
         echo "Phone Number : " . $_POST["phnno"] . "<br>";
     } else {
-        echo "Please entre Phone Number <br>";
+        echo "Please Entre Valid Phone Number <br>";
     }
 
     //email
 
-    if (!empty($_POST["email"])) {
+    if (!empty($email)) {
         echo "Email : " . $_POST["email"] . "<br>";
     } else {
-        echo "Please entre Email <br>";
+        echo "Please Entre Valid Email <br>";
     }
 
     //subject
-    if (!empty($_POST["subject"])) {
+    if (!empty($subject) && strlen($subject) >= 10 && strlen($subject) <= 25) {
         echo "Subject : " . $_POST["subject"] . "<br>";
     } else {
-        echo "Please entre Subject  <br> ";
+        echo "Please Entre Valid Subject  <br> ";
     }
 
     //message
 
-    if (!empty($_POST["message"])) {
+    if (!empty($message) && strlen($message) > 20 && strlen($message) < 150) {
         echo "Message : " . $_POST["message"];
     } else {
-        echo "Please entre Message";
+        echo "Please Entre Valid Message";
     }
 }
 
