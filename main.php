@@ -71,7 +71,7 @@ if (isset($_POST["login"])) {
 
     //email
 
-    if (!empty($email)) {
+    if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo "Email : " . $_POST["email"] . "<br>";
     } else {
         echo "Please Entre Valid Email <br>";
